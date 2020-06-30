@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "misc utilities and types for js/typescript",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc"
   },

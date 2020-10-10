@@ -1,6 +1,6 @@
 {
   "name": "tsc-utils",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "misc utilities and types for js/typescript",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/RonPenton/tsc-utils#readme",
   "devDependencies": {
-    "typescript": "^3.9.5"
+    "typescript": "^4.0.3"
   },
   "dependencies": {
-    "ow": "^0.17.0"
+    "ow": "^0.18.0"
   }
 }

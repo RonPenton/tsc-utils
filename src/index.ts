@@ -5,3 +5,4 @@ export * from './keyof';
 export * from './types';
 export * from './recursiveReplace';
 export * from './notEmpty';
+export * from './fullyPartial';

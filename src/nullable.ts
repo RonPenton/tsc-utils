@@ -1,6 +1,8 @@
+import { notEmpty } from "./notEmpty";
+
 export type Nullable<T> = T | null | undefined;
 
-export type NullableArrayOfNullableObjects<T> = (T | null | undefined)[] | null | undefined;
+export type NullableArrayOfNullableObjects<T> = Nullable<Nullable<T>[]>;
 
 /**
  * Given a nullable array of objects that may or may not be null, this method
@@ -11,7 +13,7 @@ export type NullableArrayOfNullableObjects<T> = (T | null | undefined)[] | null 
 function denullify<T>(array: NullableArrayOfNullableObjects<T>): T[] {
     if (!array)
         return [];
-    return array.filter(x => x !== null && x !== undefined) as any;
+    return array.filter(notEmpty);
 }
 
 export { denullify }

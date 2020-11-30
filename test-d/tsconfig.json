@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "lib": [],
+      "module": "commonjs",
+      "noEmit": true,
+      "paths": {
+      },
+      "skipLibCheck": true,
+      "strict": true,
+      "target": "es2015"
+    }
+}

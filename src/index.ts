@@ -7,3 +7,4 @@ export * from './recursiveReplace';
 export * from './notEmpty';
 export * from './fullyPartial';
 export * from './mapMap';
+export * from './partialRecord';

@@ -8,3 +8,4 @@ export * from './notEmpty';
 export * from './fullyPartial';
 export * from './mapMap';
 export * from './objectMap';
+export * from './partialRecord';

@@ -9,3 +9,4 @@ export * from './fullyPartial';
 export * from './mapMap';
 export * from './objectMap';
 export * from './partialRecord';
+export * from './extractPromiseType';

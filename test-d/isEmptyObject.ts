@@ -1,4 +1,4 @@
-import { isEmptyObject, EmptyObject } from '../src';
+import { isEmptyObject } from '../src';
 
 const empty: any = {};
 
@@ -6,6 +6,6 @@ const empty: any = {};
 type e1 = typeof empty;
 
 if (isEmptyObject(empty)) {
-    // $ExpectType EmptyObject
+    // $ExpectType Record<string, never>
     type e2 = typeof empty;
 }

@@ -11,3 +11,4 @@ export * from './objectMap';
 export * from './partialRecord';
 export * from './extractPromiseType';
 export * from './isEmptyObject';
+export * from './isUuid';

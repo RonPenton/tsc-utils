@@ -1,4 +1,4 @@
-import validate from 'uuid-validate';
+import validate = require('uuid-validate');
 
 export type UuidVersion = 1 | 2 | 3 | 4 | 5;
 

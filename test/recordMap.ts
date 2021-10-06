@@ -1,4 +1,4 @@
-import { recordMap } from '../src';
+import { delay, recordMap, recordMapAsync } from '../src';
 
 describe('record map:', () => {
 
@@ -35,5 +35,20 @@ describe('record map:', () => {
         expect(map.b()).toBe('B');
         expect(map.c()).toBe('C');
     });
+
+    test('maps async', async () => {
+
+        const K1 = ['a', 'b', 'c'] as const;
+        const helper = async (str: string) => {
+            await delay(10);
+            return str.toUpperCase();
+        }
+        const map = await recordMapAsync(K1, helper);
+
+        expect(map.a).toBe('A');
+        expect(map.b).toBe('B');
+        expect(map.c).toBe('C');
+    });
+
 
 });

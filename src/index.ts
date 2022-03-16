@@ -14,3 +14,5 @@ export * from './isEmptyObject';
 export * from './isUuid';
 export * from './apply';
 export * from './recordMap';
+export * from './optionalLeaves';
+export * from './primitive';

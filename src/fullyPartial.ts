@@ -1,4 +1,4 @@
-import { Primitive } from "@sindresorhus/is";
+import { Primitive } from "./primitive";
 import { Null } from "./types";
 
 export type FullyPartial<T> = {

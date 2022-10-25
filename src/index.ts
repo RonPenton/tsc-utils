@@ -16,3 +16,4 @@ export * from './apply';
 export * from './recordMap';
 export * from './optionalLeaves';
 export * from './primitive';
+export * from './iterables';

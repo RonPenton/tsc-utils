@@ -15,6 +15,24 @@ export function* filterIterable<T>(iterable: IterableIterator<T>, predicate: (va
     }
 }
 
+export function findIterable<T, S extends T>(iterable: IterableIterator<T>, predicate: (value: T, index: number) => value is S): S | undefined;
+export function findIterable<T>(iterable: IterableIterator<T>, predicate: (value: T, index: number) => unknown): T | undefined;
+export function findIterable<T>(iterable: IterableIterator<T>, predicate: (value: T, index: number) => unknown) {
+    let next = iterable.next();
+    let idx = 0;
+
+    while (!next.done) {
+        if (predicate(next.value, idx)) {
+            return next.value;
+        }
+
+        idx++;
+        next = iterable.next();
+    }
+
+    return undefined;
+}
+
 export function* mapIterable<T, U>(iterable: IterableIterator<T>, mapper: (value: T, index: number) => U) {
     let next = iterable.next();
     let idx = 0;

@@ -11,3 +11,13 @@
 export type KeysOf<R, T> = {
     [P in keyof R]: R[P] extends T ? P : never;
 }[keyof R];
+
+
+/**
+ * Not truly typesafe but 99% of the time it's good enough really. 
+ * Don't use this if you're using polymorphism. 
+ * @param t 
+ */
+export function keysOf<T extends {}>(t: T): (keyof T)[] {
+    return Object.keys(t) as any;
+}

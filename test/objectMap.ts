@@ -1,4 +1,4 @@
-import { objectMap } from '../src';
+import { objectMap, typedObjectMap } from '../src';
 
 describe('map:', () => {
 
@@ -40,5 +40,14 @@ describe('map:', () => {
         expect(mapped["threebar"]).toBe("3baz");
     });
 
+    test('Typed Object Map', () => {
+        const map = { "one": 1, "two": 2, "three": 3 };
+
+        const mapped = typedObjectMap(map, (v, k) => k + v);
+
+        expect(mapped.one).toBe("one1");
+        expect(mapped.two).toBe("two2");
+        expect(mapped.three).toBe("three3");
+    });
 
 });

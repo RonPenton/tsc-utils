@@ -16,3 +16,15 @@ export function objectMap<V, NV = V>(
 
     return newObject;
 }
+
+export type KeyedMapFn<K, V, NV = V> = (value: V, key: K) => NV;
+
+export function typedObjectMap<K extends string, V, NV = V>(
+    obj: Record<K, V>, map: KeyedMapFn<K, V, NV>
+): Record<K, NV> {
+    const newObject: Record<K, NV> = {} as any;
+    for (const key in obj) {
+        newObject[key] = map(obj[key], key);
+    }
+    return newObject;
+}

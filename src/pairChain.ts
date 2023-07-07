@@ -3,7 +3,7 @@
  * @param items 
  * @returns 
  */
-export function* pairChain<T>(items: T[]) {
+export function* pairChain<T>(items: T[]): Generator<[T, T], void, unknown> {
     if(items.length < 2) 
         return;
 

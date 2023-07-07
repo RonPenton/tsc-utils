@@ -18,3 +18,5 @@ export * from './optionalLeaves';
 export * from './primitive';
 export * from './iterables';
 export * from './keyMap';
+export * from './bifurcate';
+export * from './pairChain';

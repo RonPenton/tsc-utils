@@ -20,3 +20,5 @@ export * from './iterables';
 export * from './keyMap';
 export * from './bifurcate';
 export * from './pairChain';
+export * from './estimator';
+export * from './recordFilter';

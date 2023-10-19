@@ -1,25 +1,9 @@
-export type RecordMapper<K, V> = (value: K) => V;
-export type RecordMapperAsync<K, V> = (value: K) => Promise<V>;
-
-export function recordMap<K extends string | number | symbol, V>(
-    keys: readonly K[],
-    mapper: RecordMapper<K, V>,
-): Record<K, V> {
-
-    return keys.reduce((item, key) => {
-        item[key] = mapper(key);
-        return item;
-    }, {} as Record<K, V>);
-}
-
-export async function recordMapAsync<K extends string | number | symbol, V>(
-    keys: readonly K[],
-    mapper: RecordMapperAsync<K, V>,
-): Promise<Record<K, V>> {
-
-    let item = {} as Record<K, V>;
-    for (const key of keys) {
-        item[key] = await mapper(key);
+export function recordMap<T, U>(record: Record<string, T>, mapper: (value: T, index: number) => U) {
+    let output: Record<string, U> = {};
+    let idx = 0;
+    for (const [key, value] of Object.entries(record)) {
+        output[key] = mapper(value, idx);
+        idx++;
     }
-    return item;
+    return output;
 }

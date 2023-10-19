@@ -23,3 +23,4 @@ export * from './estimator';
 export * from './recordFilter';
 export * from './recordMap';
 export * from './coalesceRecords';
+export * from './filterKeys';

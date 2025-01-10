@@ -42,6 +42,15 @@ export type CoalescedRecordNullish<T, U> = {
     [K in keyof T | keyof U]: CoalesceNullish<ValueOf<T, K>, ValueOf<U, K>>;
 }
 
+/**
+ * Coalesces the second record into the first record.
+ * If using mode "nullish", then any nullish value in the first record will be overwritten.
+ * If using "undefined", then only undefined values will be overwritten.
+ * @param first 
+ * @param second 
+ * @param mode 
+ * @returns 
+ */
 export function coalesceRecords<
     T extends Record<string, any>,
     U extends Record<string, any>,

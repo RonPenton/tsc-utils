@@ -31,6 +31,16 @@ describe('coalesceRecords:', () => {
         expect(result).toStrictEqual({ a: 1, b: 2, c: 4 });
     });
 
+    test('coalesces null', () => {
+
+        const a = { a: 1, b: null };
+        const b = { b: 5, c: 4 };
+
+        const result = coalesceRecords(a, b, 'undefined');
+
+        expect(result).toStrictEqual({ a: 1, b: null, c: 4 });
+    });
+
     test('coalesces identity', () => {
 
         const a = {};

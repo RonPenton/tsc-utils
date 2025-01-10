@@ -4,7 +4,13 @@
 module.exports = {
     preset: 'ts-jest',
     testEnvironment: 'node',
-    globals: { 'ts-jest': { tsconfig: {}, babelConfig: 'babel.config.js' } },
+    //    globals: { 'ts-jest': { tsconfig: {}, babelConfig: 'babel.config.js' } },
+    transform: {
+        '^.+\\.tsx?$': ['ts-jest', {
+            babel: true,
+            tsConfig: 'tsconfig.json',
+        }]
+    },
     collectCoverage: true,
     coverageDirectory: 'coverage',
     coveragePathIgnorePatterns: [

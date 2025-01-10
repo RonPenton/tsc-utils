@@ -59,3 +59,18 @@ export function reduceIterable<T, U>(
     }
     return initial;
 }
+
+
+export function* flatMapIterable<T, U>(iterable: IterableIterator<T>, mapper: (value: T, index: number) => Iterable<U>) {
+    let next = iterable.next();
+    let idx = 0;
+
+    while (!next.done) {
+        const val = mapper(next.value, idx);
+        for (const v of val) {
+            yield v;
+        }
+        idx++;
+        next = iterable.next();
+    }
+}

@@ -1,4 +1,4 @@
-import { filterIterable, mapIterable, reduceIterable } from '../src';
+import { filterIterable, mapIterable, reduceIterable, flatMapIterable } from '../src';
 
 describe('iterables:', () => {
 
@@ -48,5 +48,19 @@ describe('iterables:', () => {
 
         expect(reduced).toBe('0123');
     });
+
+    test('maps', () => {
+        const set = new Set([[1, 2, 3], [4, 5, 6]]);
+
+        const mapped = Array.from(flatMapIterable(set.values(), x => x.map(y => y +1)));
+
+        expect(mapped[0]).toBe(2);
+        expect(mapped[1]).toBe(3);
+        expect(mapped[2]).toBe(4);
+        expect(mapped[3]).toBe(5);
+        expect(mapped[4]).toBe(6);
+        expect(mapped[5]).toBe(7);
+    });
+
 
 });

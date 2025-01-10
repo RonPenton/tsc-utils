@@ -24,3 +24,4 @@ export * from './recordFilter';
 export * from './recordMap';
 export * from './coalesceRecords';
 export * from './filterKeys';
+export * from './groupBy';
